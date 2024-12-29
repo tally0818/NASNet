@@ -8,6 +8,7 @@ Traditional NAS frameworks typically consist of three fundamental components: th
 
 
 ## 1.Search Space
+The search space is a fundamental component of Neural Architecture Search (NAS). It represents a crucial balance between human design bias and search efficiency. A smaller search space with more predefined architectural decisions allows NAS algorithms to find high-performing architectures more quickly. Conversely, a larger search space with basic building blocks requires more computational time but offers the potential to discover innovative architectural designs.
 
 ### 1.1 NASNet search space
 The NASNet search space pioneered the modern cell-based approach to architecture search. It draws inspiration from state-of-the-art human-designed CNN architectures, which typically feature repeated structural motifs. This search space explores two types of cells - normal cells and reduction cells - and stacks them to form the overall architecture while keeping the backbone (macro structure) fixed. The key distinction between these cells lies in the reduction cell's function: it halves the input height and width while doubling the number of filters to modify spatial resolution. To handle dimensional mismatches, 1×1 convolutions are strategically inserted where necessary.
@@ -17,6 +18,7 @@ During block construction, all unused hidden states generated within the convolu
 사진
 
 ### 1.1.1 NASNet A architecture
+ NASNet-A represents a specific variant in the NASNet family, distinguished by its method of computing cell outputs. In this architecture, all unused hidden states are concatenated along the depth dimension to produce the final cell output. The resulting cell structures discovered for CIFAR-10 data demonstrate this approach.
 
 ## 2.Search Strategy
  While the search space forms the foundation of NAS, the search strategy represents its most extensively studied component. These strategies generally fall into two main categories: black-box optimization techniques and one-shot techniques. Let's begin by examining some fundamental black-box optimization approaches.
@@ -49,7 +51,6 @@ Evolutionary algorithms have gained significant popularity in architecture optim
  The core concept behind one-shot methods is that every architecture produced by a NAS algorithm can be viewed as a subnetwork of a single "supernetwork." Once a supernet is trained, each architecture from the search space can be evaluated by inheriting its weights from the corresponding subnet within the supernet. This method allows training an exponential number of architectures for a linear computational cost. However, this approach relies on a crucial assumption: the ranking of architectures must remain relatively consistent with the ranking one would obtain from training them independently.
 
 implementation OTW!!
-
 
 
 ## 3.Performance estimation strategy
