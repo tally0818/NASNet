@@ -33,7 +33,7 @@ TRPO maximizes a surrogate objective:
 $L^{CPI}(\theta)=\widehat{E}_{t}[\frac{\pi_{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})}]=\widehat{E}_{t}[r_t(\theta)\widehat{A}_$
 
 Without constraints, maximizing this objective would lead to excessively large policy updates. To address this issue, a CLIP objective was introduced:
-LCLIP()=Et[min(rt()At, clip(rt(), 1-, 1+)At)]
+$L^{CLIP}(\theta)=\widehat{E}_t[min(r_t(\theta)\widehat{A}_t),clip(r_t(\theta),1-\epsilon,1+\epsilon)\widehat{A}_t]$
 Due to clipping, excessively large policy updates will not change the objective value, effectively preventing large policy shifts. To ensure sufficient exploration, an entropy bonus is added. The final objective, with hyperparameter c, becomes:
 LCLIP+S()=Et[LCLIP()+cS[](st)]
 
