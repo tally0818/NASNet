@@ -30,12 +30,12 @@ Random search serves as one of the most straightforward NAS baselines. It operat
  PPO presents an alternative approach to training an RNN controller. It was originally proposed as an objective that achieves the data efficiency and reliable performance of Trust Region Policy Optimization (TRPO) while using only first-order optimizations.
 TRPO maximizes a surrogate objective:
 
-$L^{CPI}(\theta)=\widehat{E}_{t}[\frac{\pi_{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})}]=\widehat{E}_{t}[r_t(\theta)\widehat{A}_$
+$ L^{CPI}(\theta)=\widehat{E}_{t}[\frac{\pi_{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})}]=\widehat{E}_{t}[r_t(\theta)\widehat{A}_ $
 
 Without constraints, maximizing this objective would lead to excessively large policy updates. To address this issue, a CLIP objective was introduced:
-$L^{CLIP}(\theta)=\widehat{E}_t[min(r_t(\theta)\widehat{A}_t),clip(r_t(\theta),1-\epsilon,1+\epsilon)\widehat{A}_t]$
+$ L^{CLIP}(\theta)=\widehat{E}_t[min(r_t(\theta)\widehat{A}_t),clip(r_t(\theta),1-\epsilon,1+\epsilon)\widehat{A}_t] $
 Due to clipping, excessively large policy updates will not change the objective value, effectively preventing large policy shifts. To ensure sufficient exploration, an entropy bonus is added. The final objective, with hyperparameter c, becomes:
-LCLIP+S()=Et[LCLIP()+cS[](st)]
+$ L^{CLIP+S}(\theta)=\widehat{E}_t[L^{CLIP}(\theta)+cS[\pi_{\theta}](s_t)] $
 
 ### 2.3. Evolutionary and genetic algorithm based search
 Evolutionary algorithms have gained significant popularity in architecture optimization due to their flexibility, conceptual simplicity, and competitive results.
