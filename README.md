@@ -14,11 +14,8 @@ The search space is a fundamental component of Neural Architecture Search (NAS).
 The NASNet search space pioneered the modern cell-based approach to architecture search. It draws inspiration from state-of-the-art human-designed CNN architectures, which typically feature repeated structural motifs. This search space explores two types of cells - normal cells and reduction cells - and stacks them to form the overall architecture while keeping the backbone (macro structure) fixed. The key distinction between these cells lies in the reduction cell's function: it halves the input height and width while doubling the number of filters to modify spatial resolution. To handle dimensional mismatches, 1×1 convolutions are strategically inserted where necessary.
  Examining the microstructure reveals how cells are formed: each cell comprises B blocks, with each block constructed through specific sequential steps 
 사진 
-During block construction, all unused hidden states generated within the convolutional cell are concatenated along the depth dimension to produce the final cell output. The paper presents specific examples of discovered normal and reduction cells 
+During block construction, all unused hidden states generated within the convolutional cell are concatenated along the depth dimension to produce the final cell output(This is for NASNet-A architecture). The paper presents specific examples of discovered normal and reduction cells on CIFAR-10 dataset:
 사진
-
-### 1.1.1 NASNet A architecture
- NASNet-A represents a specific variant in the NASNet family, distinguished by its method of computing cell outputs. In this architecture, all unused hidden states are concatenated along the depth dimension to produce the final cell output. The resulting cell structures discovered for CIFAR-10 data demonstrate this approach.
 
 ## 2.Search Strategy
  While the search space forms the foundation of NAS, the search strategy represents its most extensively studied component. These strategies generally fall into two main categories: black-box optimization techniques and one-shot techniques. Let's begin by examining some fundamental black-box optimization approaches.
