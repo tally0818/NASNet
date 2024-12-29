@@ -64,7 +64,7 @@ synflow = i=0NLii
 
 ## 4.Implementation
 example of the usage of my code is at “main.py” and example output of this file follows:
-
+![](/imgs/result.png)
 ## 5.References
 
 https://arxiv.org/pdf/1611.01578
