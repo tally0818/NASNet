@@ -67,14 +67,14 @@ example of the usage of my code is at “main.py” and example output of this f
 ![](/imgs/result.png)
 ## 5.References
 
-https://arxiv.org/pdf/1611.01578
+[NEURAL ARCHITECTURE SEARCH WITH REINFORCEMENT LEARNING](https://arxiv.org/pdf/1611.01578)
 
-https://arxiv.org/pdf/1707.07012
+[Learning Transferable Architectures for Scalable Image Recognition](https://arxiv.org/pdf/1707.07012)
 
-https://arxiv.org/pdf/2301.08727
+[Neural Architecture Search: Insights from 1000 Papers](https://arxiv.org/pdf/2301.08727)
 
-https://arxiv.org/pdf/1802.01548
+[Regularized Evolution for Image Classifier Architecture Search](https://arxiv.org/pdf/1802.01548)
 
-https://arxiv.org/pdf/1707.06347
+[Proximal Policy Optimization Algorithms](https://arxiv.org/pdf/1707.06347)
 
 
