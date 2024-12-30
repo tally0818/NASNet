@@ -63,13 +63,6 @@ class Regularized_Evolution():
       return self._op_mutate(arch)
     return self._hs_mutate(arch)
 
-  def _discard(self, dead):
-    history = []
-    for i in range(len(self.history)):
-      if self.history[i][0] != dead:
-        history.append(self.history[i])
-    self.history = history
-
   def search(self, num_generations : int, sample_size : int) -> nn.Module:
     for generation in range(num_generations):
       sample = []
