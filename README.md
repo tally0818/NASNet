@@ -30,12 +30,15 @@ Random search serves as one of the most straightforward NAS baselines. It operat
  PPO presents an alternative approach to training an RNN controller. It was originally proposed as an objective that achieves the data efficiency and reliable performance of Trust Region Policy Optimization (TRPO) while using only first-order optimizations.
 TRPO maximizes a surrogate objective:
 
-$L^{CPI}(\theta)=\widehat{E}_{t}[\frac{\pi_{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})}]=\widehat{E}_{t}[r_t(\theta)\widehat{A}]$
+$L^{CPI}(\theta)=\widehat{E}{t}\left[\frac{\pi{\theta}(a_{t}|s_{t})}{\pi_{\theta_{old}}(a_{t}|s_{t})}\right]=\widehat{E}{t}\left[r{t}(\theta)\widehat{A}_t\right]$
 
 Without constraints, maximizing this objective would lead to excessively large policy updates. To address this issue, a CLIP objective was introduced:
+
 $L^{CLIP}(\theta)=\widehat{E}_t[min(r_t(\theta)\widehat{A}_t),clip(r_t(\theta),1-\epsilon,1+\epsilon)\widehat{A}_t]$
+
 Due to clipping, excessively large policy updates will not change the objective value, effectively preventing large policy shifts. To ensure sufficient exploration, an entropy bonus is added. The final objective, with hyperparameter c, becomes:
-$L^{CLIP+S}(\theta)=\widehat{E}_t[L^{CLIP}(\theta)+cS[\pi_{\theta}](s_t)]$
+
+$L^{CLIP+S}(\theta)=\widehat{E}{t}\left[L^{CLIP}(\theta)+cS\pi{\theta}\right]$
 
 ### 2.3. Evolutionary and genetic algorithm based search
 Evolutionary algorithms have gained significant popularity in architecture optimization due to their flexibility, conceptual simplicity, and competitive results.
@@ -61,7 +64,7 @@ implementation OTW!!
 
 #### 3.2.1 Synflow
  Synflow represents the L1 path-norm of the network. According to our reference paper, Synflow outperformed five other zero-cost proxies. It can be expressed as:
-synflow = i=0NLii
+$synflow = \sum_{i=0}^{N}\frac{\partial L}{\partial \theta_{i}}\odot L$
 
 ## 4.Implementation
 example of the usage of my code is at “main.py” and example output of this file follows:
