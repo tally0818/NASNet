@@ -34,7 +34,7 @@ $L^{CPI}(\theta)=\widehat{E}{t}\left[\frac{\pi{\theta}(a_{t}|s_{t})}{\pi_{\theta
 
 Without constraints, maximizing this objective would lead to excessively large policy updates. To address this issue, a CLIP objective was introduced:
 
-$L^{CLIP}(\theta)=\widehat{E}_t[min(r_t(\theta)\widehat{A}_t),clip(r_t(\theta),1-\epsilon,1+\epsilon)\widehat{A}_t]$
+$L^{CLIP}(\theta)=\widehat{E}_t[min(r_{t}(\theta)\widehat{A}_t),clip(r_t(\theta),1-\epsilon,1+\epsilon)\widehat{A}_t]$
 
 Due to clipping, excessively large policy updates will not change the objective value, effectively preventing large policy shifts. To ensure sufficient exploration, an entropy bonus is added. The final objective, with hyperparameter c, becomes:
 
