@@ -46,6 +46,7 @@ Evolutionary algorithms have gained significant popularity in architecture optim
  
 #### 2.3.1 Regularized Evolution
  The Regularized Evolution algorithm represents a standard evolutionary method with a unique modification: it removes the longest-surviving architecture from the population in each step, regardless of its performance. This approach has demonstrated superior performance compared to both random search and RL methods, achieving state-of-the-art results on ImageNet upon its release in 2019.
+ 
 ![](/imgs/re.png)
 
 ### 2.4 One-shot methods
