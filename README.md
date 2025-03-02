@@ -82,4 +82,6 @@ example of the usage of my code is at “main.py” and example output of this f
 
 [Proximal Policy Optimization Algorithms](https://arxiv.org/pdf/1707.06347)
 
+[Pruning neural networks without any data by iteratively conserving synaptic flow](https://arxiv.org/abs/2006.05467)
+
 
